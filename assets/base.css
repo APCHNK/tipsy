@@ -1695,16 +1695,16 @@ details[open] > .share-button__fallback {
 .customer select {
     -webkit-appearance: none;
     appearance: none;
-    background-color: rgb(var(--color-background));
-    color: rgb(var(--color-foreground));
+    background-color: #FFFCFA;
+    color: #1F4692;
     font-size: 1.6rem;
     width: 100%;
     box-sizing: border-box;
     transition: box-shadow var(--duration-short) ease;
-    border-radius: var(--inputs-radius);
-    height: 4.5rem;
-    min-height: calc(var(--inputs-border-width) * 2);
-    min-width: calc(7rem + (var(--inputs-border-width) * 2));
+    border-radius: 10rem;
+    height: 4.4rem;
+    min-height: 4.4rem;
+    min-width: calc(31rem + (var(--inputs-border-width) * 2));
     position: relative;
     border: 0;
 }
@@ -1721,7 +1721,7 @@ details[open] > .share-button__fallback {
     right: 0;
     bottom: 0;
     left: 0;
-    border-radius: var(--inputs-radius-outset);
+    border-radius: 10rem;
     box-shadow: var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow), var(--inputs-shadow-opacity));
     z-index: -1;
 }
@@ -1738,9 +1738,9 @@ details[open] > .share-button__fallback {
     right: var(--inputs-border-width);
     bottom: var(--inputs-border-width);
     left: var(--inputs-border-width);
-    border: 0.1rem solid transparent;
-    border-radius: var(--inputs-radius);
-    box-shadow: 0 0 0 var(--inputs-border-width) rgba(var(--color-foreground), var(--inputs-border-opacity));
+    border: 0.1rem solid #DDDFE6;
+    border-radius: 10rem;
+    /*box-shadow: 0 0 0 var(--inputs-border-width) rgba(var(--color-foreground), var(--inputs-border-opacity));*/
     transition: box-shadow var(--duration-short) ease;
     z-index: 1;
 }
@@ -1759,9 +1759,9 @@ details[open] > .share-button__fallback {
 .customer .field:hover.field:after,
 .customer select:hover.select:after,
 .localization-form__select:hover.localization-form__select:after {
-    box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground), var(--inputs-border-opacity));
+    box-shadow: 0 0 0 #1F4692;
     outline: 0;
-    border-radius: var(--inputs-radius);
+    border-radius: 10rem;
 }
 
 .field__input:focus-visible,
@@ -1769,9 +1769,9 @@ details[open] > .share-button__fallback {
 .customer .field input:focus-visible,
 .customer select:focus-visible,
 .localization-form__select:focus-visible.localization-form__select:after {
-    box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground));
+    box-shadow: 0 0 0 #1F4692;
     outline: 0;
-    border-radius: var(--inputs-radius);
+    border-radius: 10rem;
 }
 
 .field__input:focus,
@@ -1779,15 +1779,16 @@ details[open] > .share-button__fallback {
 .customer .field input:focus,
 .customer select:focus,
 .localization-form__select:focus.localization-form__select:after {
-    box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground));
+    box-shadow: 0 0 0 #1F4692;
     outline: 0;
-    border-radius: var(--inputs-radius);
+    border-radius: 10rem;
 }
 
 .localization-form__select:focus {
     outline: 0;
     box-shadow: none;
 }
+
 
 .text-area,
 .select {
@@ -1852,6 +1853,7 @@ details[open] > .share-button__fallback {
     position: absolute;
     transition: top var(--duration-short) ease, font-size var(--duration-short) ease;
     color: rgba(var(--color-foreground), 0.75);
+    color: #CACDD8;
     letter-spacing: 0.1rem;
     line-height: 1.5;
 }
@@ -2622,6 +2624,11 @@ product-info .loading__spinner:not(.hidden) ~ *,
     word-break: break-word;
 }
 
+.header__heading-link svg {
+    width: 142px;
+    height: 42px;
+}
+
 .header__heading-link:hover .h2 {
     color: rgb(var(--color-foreground));
 }
@@ -2725,6 +2732,13 @@ body.menu-drawer__open .header__icon--menu[aria-expanded=true]:before {
         justify-self: center;
         text-align: center;
     }
+
+
+    .header__heading-link svg {
+        width: 173px;
+        height: 56px;
+    }
+
 }
 
 /* Header icons */
@@ -3734,4 +3748,26 @@ details-disclosure > details {
     }
 }
 
+@media screen and (max-width: 1024px) {
+    .product-grid-container .facets.small-hide {
+        display: flex!important;
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+
+    .product-grid-container .facets.small-hide .template-search__search {
+        margin-bottom: 19px;
+    }
+
+
+    .product-grid-container .facets.small-hide .title {
+        padding-bottom: 10px;
+        border-bottom: 3px solid;
+        margin-bottom: 8px;
+    }
+
+    .facets.small-hide .facets-vertical-form {
+        display: none!important;
+    }
+}
 

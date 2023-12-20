@@ -8,13 +8,17 @@
   }
 
   .section-{{ section.id }} .rich-text__blocks {
-    max-width: {{ section.settings.max_width }}rem;
+    max-width: {{ section.settings.max_width | times: 0.26 | round: 0 }}rem;
   }
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    .section-{{ section.id }} .rich-text__blocks {
+      max-width: {{ section.settings.max_width }}rem;
     }
   }
 {%- endstyle -%}
