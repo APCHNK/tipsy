@@ -3748,6 +3748,26 @@ details-disclosure > details {
     }
 }
 
-.template-search__product-search {
+@media screen and (max-width: 1024px) {
+    .product-grid-container .facets.small-hide {
+        display: flex!important;
+        flex-direction: column-reverse;
+        padding: 0;
+    }
 
+    .product-grid-container .facets.small-hide .template-search__search {
+        margin-bottom: 19px;
+    }
+
+
+    .product-grid-container .facets.small-hide .title {
+        padding-bottom: 10px;
+        border-bottom: 3px solid;
+        margin-bottom: 8px;
+    }
+
+    .facets.small-hide .facets-vertical-form {
+        display: none!important;
+    }
 }
+
