@@ -17,6 +17,10 @@
   width: 100%;
 }
 
+.rich-text__wrapper--left {
+  justify-content: flex-start;
+}
+
 @media screen and (min-width: 750px) {
   .rich-text__wrapper {
     width: 100%;
@@ -88,6 +92,10 @@
 .rich-text__heading {
   letter-spacing: -0.3px;
   font-size: calc(24px + (60 - 24) * ((100vw - 375px) / (1440 - 375)));
+  font-size: 24px;
+
+  position: relative;
+  display: initial;
 }
 
 .rich-text__heading-tooltip {
@@ -98,11 +106,15 @@
   font-family: 'Birdie', sans-serif;
   font-weight: 400;
   letter-spacing: 0;
-  position: relative;
+  position: absolute;
   background: #F4BE18;
   display: block;
   max-width: 240px;
-  font-size: calc(18px + (24 - 18) * ((100vw - 375px) / (1440 - 375)));
+  font-size: 18px;
+
+  width: 304px;
+  left: 0;
+  bottom: -59px;
 }
 
 .rich-text__heading-tooltip:after {
@@ -120,10 +132,13 @@
 
 @media screen and (min-width: 750px) {
   .rich-text__heading-tooltip {
-    padding: 16px 26px 16px 29px;
+    padding: 11px 26px 10px 25px;
     margin-left: 28px;
     max-width: initial;
     display: inline-block;
+    position: absolute;
+    left: 103%;
+    bottom: 7px;
   }
 
   .rich-text__heading {
@@ -131,12 +146,17 @@
   }
 
   .rich-text__heading-tooltip:after {
-    left: -4px;
+    left: -6px;
     bottom: 0;
     transform: none;
   }
 }
-@media screen and (min-width: 1441px) {
+
+@media screen and (min-width: 992px) {
+  .rich-text__heading-tooltip {
+    font-size: 24px;
+  }
+
   .rich-text__heading {
     font-size: 6rem;
   }
