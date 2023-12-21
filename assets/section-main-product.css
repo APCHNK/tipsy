@@ -19,7 +19,7 @@
   .product__column-sticky {
     display: block;
     position: sticky;
-    top: 3rem;
+    top: 14rem;
     z-index: 2;
   }
 
@@ -1120,6 +1120,8 @@ a.product__text {
 
   .thumbnail-list.slider--tablet-up .thumbnail-list__item.slider__slide {
     width: calc(20% - 0.8rem);
+    width: calc(184px - 1rem);
+    height: 140px;
   }
 }
 

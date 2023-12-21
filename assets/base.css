@@ -1357,7 +1357,7 @@ button.shopify-payment-button__button--unbranded {
     padding: 1.9rem 3rem;
     cursor: pointer;
     font: inherit;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     text-decoration: none;
     color: rgb(var(--color-button-text));
     transition: box-shadow var(--duration-short) ease;
@@ -1380,8 +1380,9 @@ button.shopify-payment-button__button--unbranded {
     left: 0;
     z-index: -1;
     border-radius: var(--buttons-radius-outset);
-    box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset) var(--shadow-blur-radius) rgba(var(--color-shadow), var(--shadow-opacity));
+    box-shadow: 3px 3px #1f4692;
 }
+
 
 .button:after,
 .shopify-challenge__button:after,
