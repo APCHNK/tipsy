@@ -1380,7 +1380,7 @@ button.shopify-payment-button__button--unbranded {
     left: 0;
     z-index: -1;
     border-radius: var(--buttons-radius-outset);
-    box-shadow: 3px 3px #1f4692;
+    box-shadow: 4px 4px #1f4692;
 }
 
 
