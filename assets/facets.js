@@ -76,19 +76,24 @@ class FacetFiltersForm extends HTMLElement {
     FacetFiltersForm.renderProductCount(html);
     if (typeof initializeScrollAnimationTrigger === 'function') initializeScrollAnimationTrigger(html.innerHTML);
   }
-
   static renderProductGridContainer(html) {
-    document.getElementById('ProductGridContainer').innerHTML = new DOMParser()
-      .parseFromString(html, 'text/html')
-      .getElementById('ProductGridContainer').innerHTML;
-
-    document
-      .getElementById('ProductGridContainer')
+    const newCollection = new DOMParser().parseFromString(html, 'text/html').getElementById('ProductGridContainer').querySelector('.collection').innerHTML;
+  
+    // Обновляем содержимое блока 'collection' внутри 'ProductGridContainer'
+    const productGridContainer = document.getElementById('ProductGridContainer').querySelector('.collection');
+    productGridContainer.innerHTML = newCollection;
+  
+    // Убираем класс 'loading' у блока 'collection'
+    productGridContainer.classList.remove('loading');
+  
+    productGridContainer
       .querySelectorAll('.scroll-trigger')
       .forEach((element) => {
         element.classList.add('scroll-trigger--cancel');
       });
   }
+  
+
 
   static renderProductCount(html) {
     const count = new DOMParser().parseFromString(html, 'text/html').getElementById('ProductCount').innerHTML;

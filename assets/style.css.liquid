@@ -254,6 +254,7 @@
   position: relative;
   z-index: 5;
   width: max-content;
+  transition: all 0.3s;
 }
 .cart_sumary .continue div {
   cursor: pointer;
@@ -269,6 +270,7 @@
   border: 1px solid var(--accent-blue-100, #1f4692);
   background: var(--accent-yellow-100, #f4be18);
   width: max-content;
+  transition: all 0.3s;
 }
 .cart_sumary .continue div::after {
   position: absolute;
@@ -280,6 +282,16 @@
   z-index: -1;
   top: 3px;
   left: 3px;
+}
+.cart_sumary .continue:hover div {
+  color: var(--accent-cream, #FFF6EE);
+  border: 1px solid var(--black, #1C1C1C);
+  background: var(--accent-blue-100, #1F4692);
+  transition: all 0.3s;
+}
+.cart_sumary .continue:hover div::after {
+  background: var(--black, #1C1C1C);
+  transition: all 0.3s;
 }
 .summary_block ul li .text {
   color: var(--black, #1c1c1c);
@@ -378,6 +390,7 @@
   position: relative;
   z-index: 5;
   width: max-content;
+  transition: all 0.3s;
 }
 .summary_block .continue button {
   cursor: pointer;
@@ -393,6 +406,7 @@
   border: 1px solid var(--accent-blue-100, #1f4692);
   background: var(--accent-yellow-100, #f4be18);
   width: max-content;
+  transition: all 0.3s;
 }
 .summary_block .continue button::after {
   position: absolute;
@@ -404,6 +418,16 @@
   z-index: -1;
   top: 3px;
   left: 3px;
+}
+.summary_block .continue:hover button {
+  color: var(--accent-cream, #FFF6EE);
+  border: 1px solid var(--black, #1C1C1C);
+  background: var(--accent-blue-100, #1F4692);
+  transition: all 0.3s;
+}
+.summary_block .continue:hover button::after {
+  background: var(--black, #1C1C1C);
+  transition: all 0.3s;
 }
 @media screen and (max-width: 1040px) {
   .sec1 {
