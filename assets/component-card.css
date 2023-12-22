@@ -467,7 +467,6 @@
   border: 3px solid #D55F4A;
   border-radius: 32px;
   padding: 15px 15px 6px;
-  background: #FFFCFA;
 }
 
 .product-card-wrapper .card__media {
@@ -562,20 +561,10 @@
 
 .card__content form.form .button {
   display: flex;
-  min-height: 22px;
+  min-height: 41px;
   max-height: 41px;
-  min-width: 39%;
-  max-width: 39%;
+  min-width: 47%;
+  max-width: 47%;
   padding: 10px;
   font-size: 16px;
-}
-
-@media screen and (min-width: 992px) {
-
-  .card__content form.form .button {
-    min-height: 41px;
-    max-height: 41px;
-    min-width: 47%;
-    max-width: 47%;
-  }
 }
