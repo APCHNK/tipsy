@@ -1,6 +1,9 @@
 body.product-page {
     padding-top: 11rem;
 }
+body.product-page .shopify-payment-button__button {
+    display: none;
+}
 
 body.product-page #MainContent {
     background: #fff6ee;
