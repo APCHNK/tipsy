@@ -214,7 +214,7 @@ body.product-page .product__description p + p {
     margin: 0;
 }
 
-body.product-page .product-form .button.button--secondary {
+body.product-page .product-form .button.button--secondary, body.product-page .product-form .button.button--primary {
     min-height: 4.1rem;
     padding: 1rem;
 }
