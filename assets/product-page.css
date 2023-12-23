@@ -581,6 +581,7 @@ body.product-page .product__media-wrapper:before {
 }
 
 
+
 @media screen and (min-width: 1024px) {
     body.product-page .product--medium:not(.product--no-media) .product__media-wrapper {
         max-width: 738px;
