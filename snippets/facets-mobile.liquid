@@ -1,15 +1,15 @@
 {% comment %} 
-                                                  Renders facets (filtering and sorting)
-                                                 
-                                                  Accepts: 
-                                                  - results: {Object} Collection or Search object 
-                                                  - enable_filtering: {Boolean} Show filtering when true 
-                                                  - enable_sorting: {Boolean} Show sorting when true 
-                                                  - filter_type: {String} Type of filter 
-                                                  - paginate: {Object}
-                                                 
-                                                  Usage:
-                                                  {% render 'facets-mobile', results: collection, enable_filtering: true, enable_sorting: true, filter_type: 'vertical', paginate: paginate %} 
+                                                    Renders facets (filtering and sorting)
+                                                   
+                                                    Accepts: 
+                                                    - results: {Object} Collection or Search object 
+                                                    - enable_filtering: {Boolean} Show filtering when true 
+                                                    - enable_sorting: {Boolean} Show sorting when true 
+                                                    - filter_type: {String} Type of filter 
+                                                    - paginate: {Object}
+                                                   
+                                                    Usage:
+                                                    {% render 'facets-mobile', results: collection, enable_filtering: true, enable_sorting: true, filter_type: 'vertical', paginate: paginate %} 
 {% endcomment %}
 
 {{ 'component-show-more.css' | asset_url | stylesheet_tag }}
@@ -67,12 +67,12 @@
                 <div class="active-facets-vertical-filter">
                   {%- unless results.filters == empty -%}
                     {% comment %}<h2
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            class="facets__heading facets__heading--vertical caption-large text-body"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            id="verticalTitle"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            tabindex="-1"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          >
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            {{ 'products.facets.filter_by_label' | t }}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </h2>{% endcomment %}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  class="facets__heading facets__heading--vertical caption-large text-body"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  id="verticalTitle"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  tabindex="-1"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                >
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  {{ 'products.facets.filter_by_label' | t }}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </h2>{% endcomment %}
                   {%- endunless -%}
                   <facet-remove class="active-facets__button-wrapper">
                     <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
@@ -325,7 +325,7 @@
                                 {% endif %}
 
                                 <span class="facet-checkbox__text" aria-hidden="true">
-                                  {{- value.label | escape }} ({{ value.count }})</span>
+                                  {{- value.label | escape }}</span>
                                 <span class="visually-hidden">
                                   {{- value.label | escape }} (
                                   {%- if value.count == 1 -%}
