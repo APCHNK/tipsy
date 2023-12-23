@@ -6,7 +6,8 @@
   width: 100vw;
   height: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(var(--color-foreground), 0.5);
   transition: visibility var(--duration-default) ease;
 }
@@ -17,16 +18,16 @@
 
 .drawer__inner {
   height: 100%;
-  width: 40rem;
-  max-width: calc(100vw - 3rem);
-  padding: 0 1.5rem;
-  border: 0.1rem solid rgba(var(--color-foreground), 0.2);
-  border-right: 0;
+  width: 100%;
+  max-width: var(--page-width);
+  padding: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
   transition: transform var(--duration-default) ease;
+  border-radius: 4rem;
+  background: transparent;
 }
 
 .drawer__inner-empty {
@@ -70,14 +71,20 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
 
 .drawer__header {
   position: relative;
-  padding: 1.5rem 0;
+  padding: 3.9rem 0 3.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
+.drawer__header .header__heading-link svg {
+  width: 216px;
+  height: 70px;
+}
+
 .drawer__heading {
-  margin: 0 0 1rem;
+  margin: 3.9rem 0 1rem;
+  text-align: center;
 }
 
 .drawer__close {
@@ -87,8 +94,8 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
   min-height: 4.4rem;
   box-shadow: 0 0 0 0.2rem rgba(var(--color-button), 0);
   position: absolute;
-  top: 10px;
-  right: -10px;
+  top: 34px;
+  right: 29px;
   color: rgb(var(--color-foreground));
   background-color: transparent;
   border: none;
@@ -100,8 +107,8 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
 }
 
 .drawer__close svg {
-  height: 2.4rem;
-  width: 2.4rem;
+  height: 2rem;
+  width: 2rem;
 }
 
 .drawer__contents {
@@ -143,8 +150,9 @@ cart-drawer {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100%;
+
 }
 
 .cart-drawer__overlay {
@@ -169,6 +177,13 @@ cart-drawer {
   margin: 0 2.5rem 1.5rem;
 }
 
+.cart-drawer {
+  max-width: var(--page-width);
+  width: 100%;
+  border-radius: 4rem;
+  background: #D55F4A;
+}
+
 .cart-drawer .drawer__cart-items-wrapper {
   flex-grow: 1;
 }
@@ -190,6 +205,10 @@ cart-drawer {
 cart-drawer-items {
   overflow: auto;
   flex: 1;
+
+  background: #FFFCFA;
+  border-radius: 4rem 4rem 0 0;
+  padding: 0 42px;
 }
 
 @media screen and (max-height: 650px) {
