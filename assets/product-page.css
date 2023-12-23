@@ -155,6 +155,15 @@ body.product-page .product-form__input input[type=radio]+label {
     margin: 0.7rem 1.2rem 0.2rem 0;
 }
 
+body.product-page .product-form__input input.disabled + label {
+    width: auto;
+    text-decoration: none;
+    color: #CACDD8;
+    box-shadow: 3px 3px #CACDD8;
+    background: #F0F0F0;
+    pointer-events: none;
+}
+
 body.product-page .product-form__input input[type=radio]:checked+label {
     background-color: #FFF6EE;
     color: #D55F4A;
@@ -241,7 +250,7 @@ body.product-page .collection__title .title, body.product-page .related-products
 }
 
 .featured-product-section {
-    background: url("feature-bg-m.png") no-repeat;
+    background: url("feature-sec-bg-m.png") no-repeat;
     background-position: left top;
     background-color: #1F4692;
     padding-top: 59px;
@@ -256,6 +265,7 @@ body.product-page .collection__title .title, body.product-page .related-products
     background-position: left bottom;
     background-color: #1F4692;
     padding-top: 6px;
+    padding-bottom: 63px;
     background-size: 100% auto;
 }
 
@@ -496,6 +506,10 @@ body.product-page .product__media-wrapper:before {
         width: 3rem;
         height: 3rem;
         margin: 0.7rem 1.3rem 0.2rem 0;
+    }
+
+    body.product-page .product-form__input input.disabled + label {
+        width: auto;
     }
 
     body.product-page .product-form__buttons {
