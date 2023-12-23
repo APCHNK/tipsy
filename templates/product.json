@@ -24,8 +24,8 @@
             "picker_type": "button"
           }
         },
-        "vendor": {
-          "type": "text",
+        "quantity_selector": {
+          "type": "quantity_selector",
           "settings": {
             "text": "US : Free shipping on orders over $100 CAD and free returns on all orders.",
             "text_style": "body"
