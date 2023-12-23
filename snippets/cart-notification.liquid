@@ -1,3 +1,5 @@
+{{ 'style.css' | asset_url | stylesheet_tag }}
+
 {% comment %}
   Renders cart notification
 
@@ -9,6 +11,7 @@
   {% render 'cart-notification' %}
 {% endcomment %}
 
+
 <cart-notification>
   <div class="cart-notification-wrapper{% if desktop_menu_type != 'drawer' %} page-width{% endif %}">
     <div
@@ -19,11 +22,24 @@
       role="dialog"
       tabindex="-1"
     >
+      <div id="cart-notification-product" class="cart-notification-product hidden"></div>
+      <a
+              href="{{ routes.cart_url }}"
+              id="cart-notification-button"
+              class="button button--secondary button--full-width hidden"
+      >
+        {{- 'general.cart.view_empty_cart' | t -}}
+      </a>
       <div class="cart-notification__header">
-        {% comment %}<h2 class="cart-notification__heading caption-large text-body">
-          {%- render 'icon-checkmark' -%}
-          {{ 'general.cart.item_added' | t }}
-        </h2>{% endcomment %}
+        <button
+                type="button"
+                class="cart-notification__close modal__close-button link link--text focus-inset"
+                aria-label="{{ 'accessibility.close' | t }}"
+        >
+          <svg class="icon icon-close" aria-hidden="true" focusable="false">
+            <use href="#icon-close">
+          </svg>
+        </button>
         <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
           <svg width="173" height="56" viewBox="0 0 173 56" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <rect width="173" height="56" fill="url(#pattern0)"/>
@@ -36,36 +52,155 @@
           </svg>
         </a>
         <button
-          type="button"
-          class="cart-notification__close modal__close-button link link--text focus-inset"
-          aria-label="{{ 'accessibility.close' | t }}"
+                type="button"
+                class="cart-notification__close modal__close-button link link--text focus-inset"
+                aria-label="{{ 'accessibility.close' | t }}"
         >
           <svg class="icon icon-close" aria-hidden="true" focusable="false">
             <use href="#icon-close">
           </svg>
         </button>
       </div>
-      <div id="cart-notification-product" class="cart-notification-product"></div>
-      <div class="cart-notification__links">
-        <a
-          href="{{ routes.cart_url }}"
-          id="cart-notification-button"
-          class="button button--secondary button--full-width"
-        >
-          {{- 'general.cart.view_empty_cart' | t -}}
-        </a>
-        <form action="{{ routes.cart_url }}" method="post" id="cart-notification-form">
-          <button class="button button--primary button--full-width" name="checkout">
-            {{ 'sections.cart.checkout' | t }}
-          </button>
-        </form>
-        <button type="button" class="link button-label">{{ 'general.continue_shopping' | t }}</button>
-      </div>
+
+      {% form 'cart'
+              , cart %}
+
+          <div class="block">
+            <div class="cart">
+              <div class="cart_title">Your Cart</div>
+              <div class="items">
+                {% for item in cart.items %}
+                  <div class="item cart-item" data-key="{{ item.key }}">
+                    <div class="image"><img src="{{ item.image |  image_url }}" alt="image"></div>
+                    <div class="product_info">
+                      <div class="product_info-top">
+                        <div class="product_info-left">
+                          <div class="product_title">{{ item.title }}</div>
+                          <div class="product_categorie">Hoodies</div>
+                        </div>
+                        <div class="product_info-center">
+                          <div class="size">{{ item.variant.title }}</div>
+                          <div class="text">SIZE</div>
+                        </div>
+                        <div class="product_info-rigth">
+                          <div class="size">{{ item.price | money_without_trailing_zeros }}</div>
+                          <div class="text">PRICE</div>
+                        </div>
+                      </div>
+                      <div class="product_info-bot">
+                        <p>Product ID:</p>
+                        <span>{{ item.id }}</span>
+                      </div>
+                    </div>
+                    <div class="right_elements">
+                      <div class="quantity_element">
+                        <button class="minus">
+                          <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="16"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  fill="none">
+                            <path
+                                    d="M2.66602 8H13.3327"
+                                    stroke="#1C1C1C"
+                                    stroke-linecap="square"
+                                    stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                        <input
+                                type="text"
+                                class="quantity-input"
+                                name="updates[]"
+                                value="{{ item.quantity }}">
+                        <button class="plus">
+                          <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="16"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  fill="none">
+                            <path
+                                    d="M7.99935 2.66663V13.3333M2.66602 7.96711H13.3327"
+                                    stroke="#1C1C1C"
+                                    stroke-linecap="square"
+                                    stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </div>
+                      <a href="{{ item.url_to_remove }}" class="delete">
+                        <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none">
+                          <path d="M20.25 5.25H16.5V4.5C16.5 3.90326 16.2629 3.33097 15.841 2.90901C15.419 2.48705 14.8467 2.25 14.25 2.25H9.75C9.15326 2.25 8.58097 2.48705 8.15901 2.90901C7.73705 3.33097 7.5 3.90326 7.5 4.5V5.25H3.75C3.55109 5.25 3.36032 5.32902 3.21967 5.46967C3.07902 5.61032 3 5.80109 3 6C3 6.19891 3.07902 6.38968 3.21967 6.53033C3.36032 6.67098 3.55109 6.75 3.75 6.75H4.5V20.25C4.5 20.6478 4.65804 21.0294 4.93934 21.3107C5.22064 21.592 5.60218 21.75 6 21.75H18C18.3978 21.75 18.7794 21.592 19.0607 21.3107C19.342 21.0294 19.5 20.6478 19.5 20.25V6.75H20.25C20.4489 6.75 20.6397 6.67098 20.7803 6.53033C20.921 6.38968 21 6.19891 21 6C21 5.80109 20.921 5.61032 20.7803 5.46967C20.6397 5.32902 20.4489 5.25 20.25 5.25ZM9 4.5C9 4.30109 9.07902 4.11032 9.21967 3.96967C9.36032 3.82902 9.55109 3.75 9.75 3.75H14.25C14.4489 3.75 14.6397 3.82902 14.7803 3.96967C14.921 4.11032 15 4.30109 15 4.5V5.25H9V4.5ZM18 20.25H6V6.75H18V20.25ZM10.5 10.5V16.5C10.5 16.6989 10.421 16.8897 10.2803 17.0303C10.1397 17.171 9.94891 17.25 9.75 17.25C9.55109 17.25 9.36032 17.171 9.21967 17.0303C9.07902 16.8897 9 16.6989 9 16.5V10.5C9 10.3011 9.07902 10.1103 9.21967 9.96967C9.36032 9.82902 9.55109 9.75 9.75 9.75C9.94891 9.75 10.1397 9.82902 10.2803 9.96967C10.421 10.1103 10.5 10.3011 10.5 10.5ZM15 10.5V16.5C15 16.6989 14.921 16.8897 14.7803 17.0303C14.6397 17.171 14.4489 17.25 14.25 17.25C14.0511 17.25 13.8603 17.171 13.7197 17.0303C13.579 16.8897 13.5 16.6989 13.5 16.5V10.5C13.5 10.3011 13.579 10.1103 13.7197 9.96967C13.8603 9.82902 14.0511 9.75 14.25 9.75C14.4489 9.75 14.6397 9.82902 14.7803 9.96967C14.921 10.1103 15 10.3011 15 10.5Z" fill="#1F4692" />
+                        </svg>
+                      </a>
+                    </div>
+
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="cart_sumary">
+                <ul>
+                  <li>
+                    <div class="text">subtotal</div>
+                    <div class="ptice">{{ cart.total_price | money_without_trailing_zeros }}</div>
+                  </li>
+                  <li>
+                    <div class="text">Taxes</div>
+                    <div class="ptice">$15</div>
+                  </li>
+                  <li>
+                    <div class="text">total amount</div>
+                    <div class="ptice">$165</div>
+                  </li>
+                </ul>
+                <div class="buttons-wrap">
+                  <div class="button button--secondary">Continue to shopping</div>
+                  <button class="button button--primary" type="submit" name="checkout">Go to Checkout</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      {% endform %}
     </div>
   </div>
 </cart-notification>
 {% style %}
-  .cart-notification {
+{% comment %}  .cart-notification {
     display: none;
-  }
+  }{% endcomment %}
 {% endstyle %}
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  document.querySelectorAll('.quantity_element button').forEach((button) => {
+    button.addEventListener('click',() =>{
+      const input = button.parentElement.querySelector('input');
+      const value = Number(input.value);
+      const isPlus = button.classList.contains('plus');
+      const key = button.closest('.cart-item').getAttribute('data-key');
+
+      if (isPlus) {
+        const newValue = value + 1
+        input.value = newValue;
+        changeItemQuantity(key, newValue)
+      }else if (value > 1) {
+        const newValue = value - 1
+        input.value = newValue;
+        changeItemQuantity(key, newValue)
+      }
+    })
+  })
+  function changeItemQuantity(key, quantity) {
+    axios.post('/cart/change.js', {
+      id: key,
+      quantity,
+    }).tnen(res => {
+      console.log(res.data)
+    });
+  }
+</script>
