@@ -9,6 +9,7 @@
 
 .reset__button {
   right: calc(var(--inputs-border-width) + 4.4rem);
+  right: 0;
   top: var(--inputs-border-width);
 }
 
@@ -28,6 +29,7 @@
   content: '';
   position: absolute;
   right: 0;
+  display: none;
 }
 
 .search__button:focus-visible,
