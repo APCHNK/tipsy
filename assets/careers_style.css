@@ -1,0 +1,314 @@
+@import url("https://fonts.cdnfonts.com/css/birdie");
+@import url("https://db.onlinewebfonts.com/c / 72bc3c6b00e72d272eb79ee0d69ce103?family=New+Spirit+Regular");
+.sec5,
+.sec6 {
+    display: flex;
+    justify-content: center;
+    font-family: "Birdie", sans-serif;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.sec5 {
+    padding-bottom: 50px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+.sec5 .container {
+    margin-top: 240px;
+}
+.container {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sec6 {
+    padding-top: 120px;
+    padding-bottom: 150px;
+    margin-bottom: -20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#MainContent {
+    background: var(--accent-cream, #fff6ee);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+}
+.title_main {
+    position: relative;
+    /* max-width: 585px; */
+    text-align: center;
+    z-index: 5;
+}
+.title_main span {
+    color: var(--accent-red-100, #d55f4a);
+    text-align: center;
+    font-family: "NewSpiritBold";
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 78px;
+    /* 130% */
+    width: 100%;
+    /* max-width: 585px; */
+}
+.title_main .text2 {
+    color: var(--accent-yellow-100, #f4be18);
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: -1;
+}
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+.block {
+    display: flex !important;
+    width: 100%;
+    padding: 20px;
+    border-radius: 24px;
+    border: 3px solid var(--accent-red-100, #d55f4a);
+    background: var(--white, #fffcfa);
+    flex-direction: column;
+    align-items: center;
+}
+.items .item:nth-child(2)::after {
+    display: none;
+}
+.items .item:nth-child(5)::after {
+    display: none;
+}
+.items .item:nth-child(8)::after {
+    display: none;
+}
+.item {
+    /* flex: 1 280px; */
+    position: relative;
+    display: flex !important;
+    width: 100%;
+    max-width: 280px;
+}
+.item::after {
+    position: absolute;
+    content: "";
+    border-radius: 24px;
+    background: var(--accent-red-100, #d55f4a);
+    height: 100%;
+    width: 100%;
+    top: 8px;
+    left: 8px;
+}
+.lookin {
+    color: var(--black, #1c1c1c);
+    text-align: center;
+    font-family: Birdie;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px; /* 150% */
+}
+.position {
+    margin-top: 40px;
+    color: var(--accent-blue-100, #1f4692);
+    text-align: center;
+    font-family: "NewSpiritBold";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.time {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 40px;
+}
+.but {
+    position: relative;
+    z-index: 5;
+    width: max-content;
+    transition: all 0.3s;
+    width: 100%;
+    text-decoration: none;
+}
+.but span {
+    cursor: pointer;
+    padding: 7px 33px;
+    color: var(--accent-blue-100, #1f4692);
+    font-family: Birdie;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 150% */
+    border-radius: 100px;
+    border: 1px solid var(--accent-blue-100, #1f4692);
+    background: var(--accent-yellow-100, #f4be18);
+    width: max-content;
+    transition: all 0.3s;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.but span::after {
+    position: absolute;
+    content: "";
+    border-radius: 46px;
+    background: var(--accent-blue-100, #1f4692);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    top: 3px;
+    left: 3px;
+}
+.but:hover span {
+    color: var(--accent-cream, #fff6ee);
+    border: 1px solid var(--black, #1c1c1c);
+    background: var(--accent-blue-100, #1f4692);
+    transition: all 0.3s;
+}
+.but:hover span::after {
+    background: var(--black, #1c1c1c);
+    transition: all 0.3s;
+}
+.e1,
+.e2,
+.e3 {
+    position: absolute;
+}
+.e2 {
+    right: 30px;
+}
+.e1 {
+    top: 30px;
+}
+.e3 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.t1,
+.t2,
+.t3 {
+    position: absolute;
+    color: var(--accent-blue-100, #1f4692);
+    text-align: center;
+    font-family: "NewSpiritBold";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-radius: 1000px;
+    border: 3px solid var(--accent-blue-100, #1f4692);
+    background: var(--white, #fffcfa);
+    padding: 13px 35px;
+}
+.t1 {
+    transform: rotate(13.319deg);
+    top: 40px;
+    z-index: 1;
+}
+.t2 {
+    transform: rotate(-14.352deg);
+    top: 45%;
+    z-index: 2;
+}
+.t3 {
+    transform: rotate(6.244deg);
+    bottom: 10px;
+    z-index: 3;
+}
+@media screen and (max-width: 768px) {
+    .title_main span {
+        font-size: 32px;
+        line-height: normal;
+        max-width: 180px;
+    }
+    .title_main {
+        max-width: 180px;
+    }
+}
+@media screen and (max-width: 989px) {
+    .sec5,
+    .sec6 {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+@media screen and (max-width: 631px) {
+    .items .item:nth-child(2) {
+        height: 170px;
+    }
+    .items .item:nth-child(8) {
+        height: 170px;
+    }
+    .items .item:nth-child(5) {
+        display: none !important;
+    }
+    .e1 {
+        top: -20px;
+        left: -20px;
+    }
+    .e2 {
+        right: 0;
+    }
+    .item {
+        max-width: unset;
+    }
+    .t1,
+    .t2,
+    .t3 {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border-radius: 1000px;
+        border: 3px solid var(--accent-blue-100, #1f4692);
+        background: var(--white, #fffcfa);
+        padding: 13px 50px;
+    }
+    .t1 {
+        top: 40px;
+    }
+    .t2 {
+        right: 0;
+    }
+    .t3 {
+        bottom: -20px;
+    }
+}
+@media screen and (max-width: 631px) {
+    .lookin {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 27px; /* 150% */
+    }
+    .position {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .sec5 .container {
+        margin-top: 150px;
+    }
+    .sec6 {
+        background-size: contain;
+    }
+    #MainContent {
+        background: var(--white, #fffcfa);
+        background-image: unset;
+    }
+}
+#MainContent {
+    background: var(--white, #fffcfa);
+    background-image: unset;
+}
