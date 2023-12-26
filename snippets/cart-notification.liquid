@@ -199,7 +199,7 @@
     axios.post('/cart/change.js', {
       id: key,
       quantity,
-    }).tnen(res => {
+    }).then(res => {
       console.log(res.data)
     });
   }

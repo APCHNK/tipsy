@@ -1258,6 +1258,10 @@ span.facet-checkbox__text {
     margin-bottom: 38px;
   }
 
+  .facets-vertical-sort .block {
+    justify-content: flex-end;
+  }
+
   .facets-vertical-sort .title {
     margin: 0;
     font-size: 24px;

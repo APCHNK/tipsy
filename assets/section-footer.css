@@ -68,6 +68,7 @@
     padding-left: 0;
     padding-right: 0;
     row-gap: 1.5rem;
+    opacity: 1!important;
   }
 
   .footer__content-bottom-wrapper {
