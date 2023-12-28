@@ -1272,3 +1272,18 @@ span.facet-checkbox__text {
   padding: 0;
   background: none;
 }
+
+
+
+@media screen and (max-width: 749px) {
+  .product-grid-container .block {
+    padding-right: 0;
+  }
+  .product-grid-container .block2 {
+    margin-bottom: 2rem;
+  }
+
+  .facet-filters__field .select {
+    min-width: auto;
+  }
+}
