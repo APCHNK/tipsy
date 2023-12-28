@@ -348,7 +348,9 @@
 /* Hover/focus state */
 .facets-layout-list .facets__label:hover .facet-checkbox__text,
 .facets-layout-list input:focus ~ .facet-checkbox__text {
-  text-decoration: underline;
+  text-decoration: none;
+  background: #D55F4A;
+  color: #fffcfa;
 }
 
 .facets-layout-grid > * {
@@ -363,6 +365,7 @@
   height: 100%;
   font-size: 1.3rem;
 }
+
 
 .facets__item label,
 .facets__item input[type='checkbox'] {
