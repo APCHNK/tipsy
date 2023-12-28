@@ -576,7 +576,5 @@
   .card__content form.form .button {
     min-height: 41px;
     max-height: 41px;
-    min-width: 39%;
-    max-width: 39%;
   }
 }
