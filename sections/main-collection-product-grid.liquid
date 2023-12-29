@@ -100,7 +100,8 @@
                     class="search">
                     <div class="field">
                       <input
-                        class="search__input field__input"
+                        class="search_field "
+                        placeholder="search for events..."
                         id="Search-In-Template"
                         type="search"
                         name="q"
@@ -118,12 +119,12 @@
                         autocapitalize="off"
                         spellcheck="false"
                         {%- endif -%}>
-                      <label class="field__label" for="Search-In-Template">{{ 'general.search.search' | t }}</label>
+
+                      <span class="text_search">search</span>
                       <input
                         name="options[prefix]"
                         type="hidden"
                         value="last">
-
                       {%- if settings.predictive_search_enabled -%}
                         <div
                           class="predictive-search predictive-search--search-template"
@@ -138,30 +139,39 @@
                           role="status"
                           aria-hidden="true"></span>
                       {%- endif -%}
-
-                      <button
-                        type="reset"
-                        class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}"
-                        aria-label="{{ 'general.search.reset' | t }}">
-                        <svg
-                          class="icon icon-close"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use xlink:href="#icon-reset">
-                        </svg>
-                      </button>
                       <button
                         type="submit"
-                        class="search__button field__button"
+                        class="search__button field__button search_button"
                         aria-label="{{ 'general.search.search' | t }}">
                         <svg
-                          class="icon icon-search"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use xlink:href="#icon-search">
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none">
+                          <path d="M17.9536 17.0614L14.0419 13.1505C15.1757 11.7893 15.741 10.0434 15.6203 8.27605C15.4997 6.50866 14.7023 4.85583 13.394 3.66139C12.0858 2.46695 10.3674 1.82286 8.59634 1.86311C6.82529 1.90336 5.13794 2.62485 3.8853 3.87749C2.63266 5.13013 1.91117 6.81748 1.87092 8.58852C1.83067 10.3596 2.47476 12.078 3.6692 13.3862C4.86364 14.6945 6.51647 15.4919 8.28386 15.6125C10.0512 15.7332 11.7971 15.1678 13.1583 14.0341L17.0692 17.9458C17.1273 18.0039 17.1962 18.0499 17.2721 18.0813C17.348 18.1128 17.4293 18.1289 17.5114 18.1289C17.5935 18.1289 17.6748 18.1128 17.7507 18.0813C17.8266 18.0499 17.8955 18.0039 17.9536 17.9458C18.0117 17.8877 18.0577 17.8188 18.0892 17.7429C18.1206 17.667 18.1368 17.5857 18.1368 17.5036C18.1368 17.4215 18.1206 17.3402 18.0892 17.2643C18.0577 17.1884 18.0117 17.1195 17.9536 17.0614ZM3.13641 8.7536C3.13641 7.64108 3.46631 6.55354 4.08439 5.62851C4.70248 4.70349 5.58098 3.98252 6.60881 3.55677C7.63665 3.13103 8.76765 3.01964 9.85879 3.23668C10.9499 3.45372 11.9522 3.98945 12.7389 4.77612C13.5256 5.56279 14.0613 6.56507 14.2783 7.65621C14.4954 8.74736 14.384 9.87836 13.9582 10.9062C13.5325 11.934 12.8115 12.8125 11.8865 13.4306C10.9615 14.0487 9.87393 14.3786 8.76141 14.3786C7.27007 14.3769 5.84029 13.7838 4.78576 12.7292C3.73123 11.6747 3.13806 10.2449 3.13641 8.7536Z" fill="#1F4692" />
                         </svg>
                       </button>
                     </div>
+                    <script>
+                      const input = document.querySelector('.search_field')
+                      const text = document.querySelector('.text_search')
+                      const button = document.querySelector('.search_button')
+                      input.addEventListener('focus', (event) =>{
+                        text.style.display = 'block'
+                        input.style.paddingLeft = '60px'
+                        button.style.display = 'none'
+                        input.removeAttribute('placeholder')
+                      })
+                      input.addEventListener('blur', (event) =>{
+                        if (input.value.length == 0) {
+                          text.style.display = 'none'
+                        input.style.paddingLeft = '48px'
+                        button.style.display = 'block'
+                        input.placeholder = 'search for events...';
+                        }
+                      })
+                    </script>
                   </form>
                 </main-search>
                 {%- if settings.predictive_search_enabled -%}
@@ -292,8 +302,8 @@
                           class="facet-filters__sort select__select caption-large"
                           id="SortBy"
                           aria-describedby="a11y-refresh-page-message">
-                          <option value="created-descending">Latest arrivals</option>
-                          <option value="created-descending">Latest arrivals</option>
+                          <option value="created-descending" class="same-as-selected">Latest arrivals</option>
+                          <option value="created-descending" class="same-as-selected">Latest arrivals</option>
                           <option value="price-ascending">Price: Low to high</option>
                           <option value="price-descending">Price: High to low</option>
                         </select>
