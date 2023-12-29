@@ -263,3 +263,16 @@ form .field::before {
     font-weight: 400;
     line-height: 24px; /* 150% */
 }
+.facets__item:hover .dwdwdwdwd g rect:first-child {
+    fill: #f4be18;
+}
+
+.facets__item:hover .dwdwdwdwd g rect:nth-child(3) {
+    stroke: #f4be18;
+}
+.delete_filter .arrow {
+    display: none !important;
+}
+.facets-vertical-sort {
+    padding-bottom: unset !important;
+}
