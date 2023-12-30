@@ -1490,7 +1490,7 @@ button.shopify-payment-button__button--unbranded {
 .customer button.disabled,
 .quantity__button.disabled {
     cursor: not-allowed;
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .button--full-width {
@@ -2028,14 +2028,19 @@ input[type="checkbox"] {
 
 /* component-quantity */
 .quantity {
-    color: rgba(var(--color-foreground));
+    color: #1C1C1C;
     position: relative;
-    width: calc(
-        14rem / var(--font-body-scale) + var(--inputs-border-width) * 2
-    );
+    width: 98px;
     display: flex;
-    border-radius: var(--inputs-radius);
-    min-height: calc((var(--inputs-border-width) * 2) + 4.5rem);
+    border-radius: 20px;
+    min-height: 32px;
+}
+
+@media screen and (max-width: 767px) {
+    .quantity {
+        width: 82px;
+        min-height: 28px;
+    }
 }
 
 .quantity:after {
@@ -2052,6 +2057,7 @@ input[type="checkbox"] {
         rgba(var(--color-foreground), var(--inputs-border-opacity));
     transition: box-shadow var(--duration-short) ease;
     z-index: 1;
+    display: none;
 }
 
 .quantity:before {
@@ -2074,7 +2080,7 @@ input[type="checkbox"] {
     color: currentColor;
     font-size: 1.6rem;
     font-weight: 500;
-    opacity: 0.85;
+    opacity: 1;
     text-align: center;
     background-color: transparent;
     border: 0;
@@ -2086,7 +2092,7 @@ input[type="checkbox"] {
 }
 
 .quantity__button {
-    width: calc(4.5rem / var(--font-body-scale));
+    width: 34px;
     flex-shrink: 0;
     font-size: 1.8rem;
     border: 0;
@@ -2095,8 +2101,15 @@ input[type="checkbox"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(var(--color-foreground));
+    color: #1c1c1c;
     padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .quantity__button {
+        width: 26px;
+        font-size: 1.4rem;
+    }
 }
 
 .quantity__button:first-child {
