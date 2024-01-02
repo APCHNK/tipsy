@@ -1,6 +1,7 @@
 .drawer {
   position: fixed;
-  z-index: 1000;
+  z-index: -1000;
+  opacity: 0;
   left: 0;
   top: 0;
   width: 100vw;
@@ -27,6 +28,8 @@
 
 .drawer.active {
   visibility: visible;
+  opacity: 1;
+  z-index: 1000;
 }
 
 .drawer__inner {
@@ -37,7 +40,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transform: translateX(100%);
+  transform: translate(0, 0);
   transition: transform var(--duration-default) ease;
   border-radius: 4rem;
   background: transparent;

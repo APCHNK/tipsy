@@ -389,7 +389,7 @@ body.product-page .product__media-wrapper:before {
         width: 88%;
     }
 
-    body.product-page .related-products .related-products__heading {
+    body.product-page .related-products .related-products__heading span {
         max-width: 150px;
     }
 }
@@ -581,6 +581,7 @@ body.product-page .product__media-wrapper:before {
         margin-top: 78px;
         background-color: #1F4692;
         background-size: 100% auto;
+        padding-bottom: 0;
     }
 
     .related-products-section {
@@ -589,7 +590,7 @@ body.product-page .product__media-wrapper:before {
         padding-top: 69px;
         background-color: #1F4692;
         background-position: left bottom;
-        background-size: 101% auto;
+        background-size: 100% auto;
     }
 
     body.product-page .product__media-wrapper:before {

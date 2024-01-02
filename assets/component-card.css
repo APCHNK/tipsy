@@ -188,6 +188,13 @@
   align-self: flex-end;
   grid-row-start: 3;
   justify-self: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__badge .badge--new {
+  margin-bottom: 8px;
+  width: max-content;
 }
 
 .card__badge.top {
@@ -567,6 +574,8 @@
   max-height: 41px;
   min-width: 47%;
   max-width: 47%;
+  min-width: 39%;
+  max-width: 39%;
   padding: 10px;
   font-size: 16px;
 }
@@ -580,10 +589,12 @@
 }
 
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
 
   .card__content form.form .button {
     min-height: 41px;
     max-height: 41px;
+    min-width: 47%;
+    max-width: 47%;
   }
 }
