@@ -27,7 +27,9 @@
   >
     {% if recommendations.performed and recommendations.products_count > 0 %}
       <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
-        {{ section.settings.heading }}
+        <span>{{ section.settings.heading }}</span>
+
+        <a href="https://5eae40-2.myshopify.com/collections/all" class="button button--primary">shop now</a>
       </h2>
       <ul
         class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"

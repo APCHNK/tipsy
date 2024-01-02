@@ -4,4 +4,35 @@
 
 .related-products__heading {
   margin: 0 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.related-products__heading .button {
+  background: #D55F4A;
+  color: #FFFCFA;
+  box-shadow: 3px 3px #FFF6EE;
+  border: none;
+  max-width: 125px;
+  min-width: 125px;
+  height: 41px;
+  min-height: 41px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 1rem;
+  font-family: 'Birdie', sans-serif;
+  font-weight: 400;
+  margin-right: 4px;
+  margin-bottom: 8px;
+  transition: all 0.15s;
+}
+
+.related-products__heading .button:hover {
+  background: #FFF6EE;
+  color: #D55F4A;
+  box-shadow: 3px 3px #D55F4A;
 }
