@@ -571,6 +571,15 @@
   font-size: 16px;
 }
 
+.card__content form.form .button[disabled] {
+  background: #DEDEDE;
+  box-shadow: 3px 3px #737373;
+  border: 1px solid #737373;
+  color: #737373;
+
+}
+
+
 @media screen and (min-width: 992px) {
 
   .card__content form.form .button {
