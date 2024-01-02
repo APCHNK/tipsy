@@ -3246,6 +3246,14 @@ details-disclosure > details {
     word-break: break-word;
 }
 
+.color-accent-2 {
+    background: #D55F4A;
+}
+
+.color-inverse {
+    background: #1F4692;
+}
+
 .gradient {
     background: rgb(var(--color-background));
     background: var(--gradient-background);
