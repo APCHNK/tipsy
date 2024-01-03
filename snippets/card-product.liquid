@@ -362,6 +362,9 @@
             {%- endif -%}
           </div>
         {%- endif -%}
+        <div class="card__favorite-badge">
+            <span class="favorite-icon-wrap"><img src="{{'heart.png' | asset_url}}" alt=""></span>
+        </div>
         <div class="card__badge {{ settings.badge_position }}">
             {%- if card_product.metafields.custom.product_label != blank -%}
                 <div id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}" class="badge badge--new badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">

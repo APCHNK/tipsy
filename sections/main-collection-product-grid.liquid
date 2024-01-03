@@ -15,7 +15,7 @@
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.68 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.46 | round: 0 }}px;
 
     background-color: #FFFCFA;
     background-image: url('{{ 'customer-bg-mob.jpg' | asset_url }}');
@@ -184,6 +184,11 @@
                     display: none;
                   }
                 }
+                @media screen and (max-width: 870px) {
+                  .delete_filter_mobile {
+                    width: 100%;
+                  }
+                }
                 @media screen and (max-width: 749px) {
                   #main-collection-filters {
                     display: none;
@@ -215,8 +220,14 @@
                   }
                   .facets__summary-label .arrow {
                     position: absolute;
-                    top: 2px;
+                    top: 50%;
                     right: 0;
+                    transform: translateY(-50%) rotate(0);
+                    line-height: 1;
+                    height: 18px;
+                  }
+                  .facets__summary[aria-expanded="true"] .facets__summary-label .arrow {
+                    transform: translateY(-50%) rotate(180deg);
                   }
                   .parent-display {
                     position: absolute;
@@ -231,7 +242,7 @@
                     , 0 10.051px 19.433px 0 rgba(70, 90, 105, 0.03)
                     , 0 18.8px 36.347px 0 rgba(70, 90, 105, 0.04)
                     , 0 45px 87px 0 rgba(70, 90, 105, 0.05);
-                    top: 44px;
+                    top: 42px;
                     left: 0;
                     width: 345px;
                   }
@@ -244,7 +255,7 @@
                   .delete_filter_mobile {
                     padding: 7px 20px;
                     position: relative;
-                    width: 170px;
+                    /*width: 170px;*/
                     border-radius: 100px;
                     border: 1px solid var(--stroke-white-blue, #DDDFE6);
                     background: var(--white, #FFFCFA);
@@ -335,11 +346,13 @@
           @media screen and (max-width: 1024px) {
             .block2 {
               display: flex;
-
+              justify-content: space-between;
+            }
+            .block3, .facets-vertical-form {
+              width: 50%;
             }
           }
         </style>
-
 
         {%- if collection.products.size == 0 -%}
           <div
@@ -363,6 +376,7 @@
             <ul
               id="product-grid"
               data-id="{{ section.id }}"
+              data-next-url="{{ paginate.next.url }}"
               class="
                 grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
                 grid--{{ section.settings.columns_desktop }}-col-desktop
@@ -394,9 +408,11 @@
             </ul>
 
             {%- if paginate.pages > 1 -%}
-              {% render 'pagination'
-                , paginate: paginate
-                , anchor: '' %}
+              <div class="show-more-btn-wrap">
+                <a class="load-more_btn button button--primary" onclick="loadMoreProducts()">show more</a>
+                <div class="load-more_spinner hidden w-8 h-8 ml-auto mr-auto border-4 border-solid border-black border-t-gray-200 rounded-full animate-spin"></div></div>
+              </div>
+              {% render 'pagination', paginate: paginate, anchor: '' %}
             {%- endif -%}
           </div>
         {%- endif -%}
@@ -408,6 +424,35 @@
   {%- endif -%}
 </div>
 <script src="{{ 'filter.js' | asset_url }}"></script>
+
+{% if template contains 'collection' %}
+  <script src="{{ 'collection-load-more.js' | asset_url }}" defer="defer"></script>
+{%endif%}
+
+{% comment %}<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function (){
+    let productsOnPage = $('#product-grid');
+    let nextUrl = productsOnPage.attr('data-next-url');
+
+    $('#load-more-button').click(function (e){
+      e.preventDefault();
+      $.ajax({
+        url: nextUrl,
+        type: "GET",
+        dataType: "html",
+        success: function (nextPage){
+          let newProducts = $(nextPage).find('#product-grid')
+          productsOnPage.append(newProducts.html());
+
+          let newUrl = newProducts.attr('data-next-url');
+          nextUrl = newUrl
+        }
+      })
+    })
+  })
+</script>{% endcomment %}
+
 {% schema %}
   {
     "name": "t:sections.main-collection-product-grid.name",
@@ -416,10 +461,10 @@
       {
         "type": "range",
         "id": "products_per_page",
-        "min": 8,
-        "max": 24,
-        "step": 4,
-        "default": 16,
+        "min": 9,
+        "max": 18,
+        "step": 3,
+        "default": 9,
         "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
       },
       {

@@ -1,10 +1,10 @@
 .pagination-wrapper {
-  margin-top: 4rem;
+  margin-top: 2.5rem;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 768px) {
   .pagination-wrapper {
-    margin-top: 5rem;
+    margin-top: 4rem;
   }
 }
 
@@ -15,12 +15,20 @@
 }
 
 .pagination__list > li {
-  flex: 1 0 4.4rem;
-  max-width: 4.4rem;
+  flex: 1 0 3.6rem;
+  max-width: 3.6rem;
+  max-height: 3.6rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 .pagination__list > li:not(:last-child) {
   margin-right: 1rem;
+}
+
+.pagination__list > li:last-child {
+  margin-right: 0.4rem;
 }
 
 .pagination__item {
@@ -35,28 +43,76 @@
   text-decoration: none;
 }
 
-a.pagination__item:hover::after {
-  height: 0.1rem;
+.pagination__item-number {
+  color: #1C1C1C;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 3rem;
+  border: 1px solid #DDDFE6;
+  border-radius: 50%;
+  background: #FFFCFA;
+  text-decoration: none;
+  font-size: 1.6rem;
+  line-height: 1;
 }
 
-.pagination__item .icon-caret {
-  height: 0.6rem;
+.pagination__item-number:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 34px;
+  height: 34px;
+  background: url("./pagination-bg.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 0.15s;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.pagination__item-number:hover {
+  text-decoration: none;
+  color: #1F4692;
+  border-color: transparent;
+  background: transparent;
+}
+
+.pagination__item-number:hover:before {
+  opacity: 1;
+}
+
+.pagination__item--current {
+  opacity: 1;
+  cursor: default;
+  text-decoration: none;
+  color: #1F4692;
+  border-color: transparent;
+  background: transparent;
+}
+
+.pagination__item--current:before {
+  opacity: 1;
 }
 
 .pagination__item--current::after {
   height: 0.1rem;
 }
 
-.pagination__item--current::after,
-.pagination__item:hover::after {
-  content: '';
-  display: block;
-  width: 2rem;
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: currentColor;
+.pagination__item-arrow {
+  width: 18px;
+}
+
+.pagination__item-arrow svg path {
+  fill: #CACDD8;
+  transition: all 0.15s;
+}
+
+.pagination__item-arrow:hover svg path {
+  fill: #1C1C1C;
 }
 
 .pagination__item--next .icon {
@@ -69,7 +125,7 @@ a.pagination__item:hover::after {
 }
 
 .pagination__item--prev .icon {
-  margin-right: -0.2rem;
+  margin-right: 0;
   transform: rotate(-90deg);
 }
 

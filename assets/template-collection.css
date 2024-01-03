@@ -97,3 +97,44 @@
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
 }
+
+.show-more-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.8rem;
+}
+
+.show-more-btn-wrap .button--primary {
+  background: #FFFCFA;
+  border: 1px solid #1F4692;
+  min-height: auto;
+  min-width: auto;
+  width: 100%;
+  padding: 10px;
+  box-shadow: none;
+  transition: background .15s;
+  height: 4rem;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+@media screen and (min-width: 768px) {
+  .show-more-btn-wrap {
+    margin-top: 6.6rem;
+  }
+
+  .show-more-btn-wrap .button--primary {
+    max-width: 29.6rem;
+  }
+}
+
+.show-more-btn-wrap .button--primary:hover {
+  background: #DDDFE6;
+  color: #1f4692;
+  border-color: #1f4692;
+  box-shadow: none;
+}
