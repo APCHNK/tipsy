@@ -43,7 +43,7 @@ body.product-page .slider-button {
 
     border-radius: 50%;
     border: 1px solid #DDDFE6;
-    margin-left: 10px;
+
 }
 
 body.product-page .slider-button:hover {
@@ -240,6 +240,14 @@ body.product-page .product__description p>span img {
 body.product-page .collection .slider-buttons {
     justify-content: flex-end;
     margin-top: -64px;
+}
+
+body.product-page .slider-button.slider-button--prev {
+    margin-right: 0.4rem;
+}
+
+body.product-page .slider-button.slider-button--next {
+    margin-left: 0.4rem;
 }
 
 body.product-page .collection .slider--tablet.product-grid {
@@ -445,6 +453,7 @@ body.product-page .product__media-wrapper:before {
     body.product-page .slider-button {
         width: 6.4rem;
         height: 6.4rem;
+        margin-left: 10px;
     }
 
     body.product-page .slider-button.slider-button--prev {

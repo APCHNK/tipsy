@@ -381,6 +381,7 @@
   word-break: break-word;
   flex-direction: row-reverse;
   justify-content: space-between;
+  align-items: center;
 }
 
 /* Hover, active, and focus states */
@@ -445,10 +446,11 @@
   position: absolute;
   right: 0;
   z-index: 5;
-  top: 0.9rem;
+  top: 1.1rem;
 }
 
-.facet-checkbox > input[type='checkbox']:checked ~ .icon-checkmark {
+.facet-checkbox > input[type='checkbox']:checked ~ .icon-checkmark,
+.facet-checkbox:hover > input[type='checkbox'] ~ .icon-checkmark  {
   visibility: visible;
 }
 

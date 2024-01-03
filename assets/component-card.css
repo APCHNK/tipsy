@@ -119,8 +119,8 @@
   margin: var(--image-padding);
   width: calc(100% - 2 * var(--image-padding));
 
-  --aspect-ratio: 307/307;
-  aspect-ratio: 307/307;
+  --aspect-ratio: 307/291;
+  aspect-ratio: 307/291;
 }
 
 .card--standard .card__media {
@@ -164,7 +164,7 @@
 
 .card__information {
   grid-row-start: 2;
-  padding: 1.3rem 1rem;
+  padding: 0 1rem 1.3rem;
 }
 
 .card:not(.ratio) > .card__content {
@@ -196,6 +196,25 @@
   margin-bottom: 8px;
   width: max-content;
 }
+
+.card__favorite-badge {
+  position: absolute;
+  top: 36px;
+  right: 33px;
+  width: 28px;
+  height: 24px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.card__favorite-badge .favorite-icon-wrap {
+  display: block;
+}
+
+.card-wrapper:hover .card__favorite-badge {
+  opacity: 1;
+}
+
 
 .card__badge.top {
   align-self: flex-start;
@@ -565,19 +584,25 @@
 
 .card__content form.form {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .card__content form.form .button {
   display: flex;
   min-height: 22px;
   max-height: 41px;
-  min-width: 47%;
-  max-width: 47%;
-  min-width: 39%;
-  max-width: 39%;
+  min-width: auto;
+  max-width: 146px;
   padding: 10px;
   font-size: 16px;
+}
+
+.card__content form.form .button.quick-add__submit {
+  margin-right: 3px;
+}
+
+.card__content form.form .button.button--secondary {
+  margin-right: 12px;
 }
 
 .card__content form.form .button[disabled] {

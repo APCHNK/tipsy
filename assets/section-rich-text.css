@@ -131,6 +131,12 @@
 }
 
 @media screen and (min-width: 750px) {
+  .section-template--14708934934610__5c1595f7-26b5-4c43-b07a-e948b3a4a148-padding .rich-text__heading {
+    letter-spacing: 0px;
+  }
+}
+
+@media screen and (min-width: 750px) {
   .rich-text__heading-tooltip {
     padding: 11px 26px 10px 25px;
     margin-left: 28px;
