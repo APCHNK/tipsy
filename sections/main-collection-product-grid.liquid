@@ -429,29 +429,6 @@
   <script src="{{ 'collection-load-more.js' | asset_url }}" defer="defer"></script>
 {%endif%}
 
-{% comment %}<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script>
-  $(document).ready(function (){
-    let productsOnPage = $('#product-grid');
-    let nextUrl = productsOnPage.attr('data-next-url');
-
-    $('#load-more-button').click(function (e){
-      e.preventDefault();
-      $.ajax({
-        url: nextUrl,
-        type: "GET",
-        dataType: "html",
-        success: function (nextPage){
-          let newProducts = $(nextPage).find('#product-grid')
-          productsOnPage.append(newProducts.html());
-
-          let newUrl = newProducts.attr('data-next-url');
-          nextUrl = newUrl
-        }
-      })
-    })
-  })
-</script>{% endcomment %}
 
 {% schema %}
   {
