@@ -600,6 +600,7 @@ body.product-page .product__media-wrapper:before {
         background-color: #1F4692;
         background-position: left bottom;
         background-size: 100% auto;
+        margin-bottom: -4px;
     }
 
     body.product-page .product__media-wrapper:before {
