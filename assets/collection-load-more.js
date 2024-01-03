@@ -33,4 +33,10 @@ async function loadMoreProducts() {
     for (let i = 0; i < new_products.length; i++) {
         products_on_page.appendChild(new_products[i]);
     }
+
+    const pagination_wrapper = document.querySelector('.pagination-wrapper');
+    const next_pagination_wrapper = nextPageDoc.querySelector('.pagination-wrapper');
+    pagination_wrapper.innerHTML = next_pagination_wrapper.querySelector('.pagination__item--prev') !== null
+        ? next_pagination_wrapper.innerHTML
+        : next_pagination_wrapper.innerHTML;
 }
