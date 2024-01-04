@@ -101,7 +101,7 @@
                     <div class="field">
                       <input
                         class="search_field "
-                        placeholder="search for events..."
+                        placeholder="search..."
                         id="Search-In-Template"
                         type="search"
                         name="q"
@@ -155,20 +155,18 @@
                     </div>
                     <script>
                       const input = document.querySelector('.search_field')
-                      const text = document.querySelector('.text_search')
+
                       const button = document.querySelector('.search_button')
                       input.addEventListener('focus', (event) =>{
-                        text.style.display = 'block'
-                        input.style.paddingLeft = '60px'
+                        input.style.paddingLeft = '16px'
                         button.style.display = 'none'
                         input.removeAttribute('placeholder')
                       })
                       input.addEventListener('blur', (event) =>{
                         if (input.value.length == 0) {
-                          text.style.display = 'none'
                         input.style.paddingLeft = '48px'
                         button.style.display = 'block'
-                        input.placeholder = 'search for events...';
+                        input.placeholder = 'search...';
                         }
                       })
                     </script>
