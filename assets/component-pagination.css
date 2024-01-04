@@ -107,12 +107,24 @@
 }
 
 .pagination__item-arrow svg path {
-  fill: #CACDD8;
+  fill: #1C1C1C;
   transition: all 0.15s;
 }
 
 .pagination__item-arrow:hover svg path {
-  fill: #1C1C1C;
+  fill: #1F4692;
+}
+
+.pagination__item-arrow[disabled='disabled'] {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.pagination__item-arrow[disabled='disabled'] svg path {
+  fill: #CACDD8;
+}
+.pagination__item-arrow[disabled='disabled']:hover svg path {
+  fill: #CACDD8;
 }
 
 .pagination__item--next .icon {
@@ -120,17 +132,9 @@
   transform: rotate(90deg);
 }
 
-.pagination__item--next:hover .icon {
-  transform: rotate(90deg) scale(1.07);
-}
-
 .pagination__item--prev .icon {
   margin-right: 0;
   transform: rotate(-90deg);
-}
-
-.pagination__item--prev:hover .icon {
-  transform: rotate(-90deg) scale(1.07);
 }
 
 .pagination__item-arrow:hover::after {
