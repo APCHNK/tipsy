@@ -585,6 +585,7 @@
 .card__content form.form {
   display: flex;
   justify-content: center;
+  margin: 0 -3px 0 -6px;
 }
 
 .card__content form.form .button {
@@ -593,17 +594,19 @@
   max-height: 41px;
   min-width: auto;
   max-width: 146px;
+  max-width: 50%;
   padding: 10px;
   font-size: 16px;
+  margin: 0 7px;
 }
 
-.card__content form.form .button.quick-add__submit {
+/*.card__content form.form .button.quick-add__submit {
   margin-right: 3px;
 }
 
 .card__content form.form .button.button--secondary {
   margin-right: 12px;
-}
+}*/
 
 .card__content form.form .button[disabled] {
   background: #DEDEDE;
@@ -615,6 +618,10 @@
 
 
 @media screen and (min-width: 768px) {
+
+  .card__content form.form {
+    margin: 0 2px 0 -1px;
+  }
 
   .card__content form.form .button {
     min-height: 41px;

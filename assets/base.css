@@ -3322,6 +3322,9 @@ details-disclosure > details {
     .content-container--full-width-mobile:after {
         display: none;
     }
+    .section-template--14708934934610__5c1595f7-26b5-4c43-b07a-e948b3a4a148-padding {
+        padding-top: 18px;
+    }
 }
 
 .global-media-settings {
