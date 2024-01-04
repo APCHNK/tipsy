@@ -1,0 +1,96 @@
+@import url("https://fonts.cdnfonts.com/css/birdie");
+@import url("https://db.onlinewebfonts.com/c / 72bc3c6b00e72d272eb79ee0d69ce103?family=New+Spirit+Regular");
+.close_but {
+    position: absolute;
+    right: 40px;
+    cursor: pointer;
+}
+.modalContainer {
+    width: 100%;
+    max-width: 650px;
+    position: relative;
+    padding: 40px;
+    border-radius: 40px;
+    background: var(--white, #fffcfa);
+}
+#loginModal {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(31, 70, 146, 0.4);
+}
+#loginModal .title {
+    margin: 0;
+    margin-bottom: 32px;
+    color: var(--accent-blue-100, #1f4692);
+    text-align: center;
+    font-family: "NewSpiritBold";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 100%;
+    text-align: center;
+}
+#loginModal .remember .left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#loginModal .remember {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+#loginModal .checkbox-container {
+    cursor: pointer;
+}
+#loginModal .email,
+#loginModal .password {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+#loginModal .email {
+    margin-bottom: 32px;
+}
+#loginModal .password {
+    margin-bottom: 16px;
+}
+#loginModal .email input,
+#loginModal .password input {
+    color: var(--accent-blue-100, #1f4692);
+    font-family: Birdie;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    border-radius: 16px;
+    border: 1px solid var(--stroke-white-blue, #dddfe6);
+    background: var(--white, #fffcfa);
+    padding: 11px 20px;
+    caret-color: #f4be18;
+}
+#loginModal input:focus-visible {
+    outline: unset;
+    box-shadow: unset;
+    border: 1px solid var(--accent-blue-100, #1f4692);
+}
+.submit input {
+    padding: 8px 33px;
+    border-radius: 100px;
+    border: 1px solid var(--accent-blue-100, #1f4692);
+    background: var(--accent-yellow-100, #f4be18);
+    box-shadow: 3px 3px #1f4692;
+    color: var(--accent-blue-100, #1f4692);
+    font-family: Birdie;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    cursor: pointer;
+}
