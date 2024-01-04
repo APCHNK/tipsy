@@ -90,9 +90,10 @@
 }
 
 .rich-text__heading {
-  letter-spacing: -0.3px;
+  /*letter-spacing: -0.3px;*/
   font-size: calc(24px + (60 - 24) * ((100vw - 375px) / (1440 - 375)));
   font-size: 24px;
+  line-height: 1.33;
 
   position: relative;
   display: initial;

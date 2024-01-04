@@ -9,6 +9,13 @@
 
   .section-{{ section.id }} .rich-text__blocks {
     max-width: {{ section.settings.max_width | times: 0.26 | round: 0 }}rem;
+    max-width: 32rem;
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-template--14708934934610__5c1595f7-26b5-4c43-b07a-e948b3a4a148-padding {
+      padding-top: 18px;
+    }
   }
 
   @media screen and (min-width: 750px) {
