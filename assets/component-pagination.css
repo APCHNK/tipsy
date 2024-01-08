@@ -76,13 +76,8 @@
 
 .pagination__item-number:hover {
   text-decoration: none;
-  color: #1F4692;
-  border-color: transparent;
-  background: transparent;
-}
-
-.pagination__item-number:hover:before {
-  opacity: 1;
+  color: #D55F4A;
+  border-color: #D55F4A;
 }
 
 .pagination__item--current {
