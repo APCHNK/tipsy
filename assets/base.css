@@ -1276,7 +1276,7 @@ button.shopify-payment-button__button--unbranded,
         --buttons-border-offset
     ); /* reduce radius edge artifacts */
     --border-opacity: calc(1 - var(--buttons-border-opacity));
-    border-radius: var(--buttons-radius-outset);
+    border-radius: 101px;
     position: relative;
 }
 
@@ -2028,7 +2028,7 @@ input[type="checkbox"] {
 
 /* component-quantity */
 .quantity {
-    color: #1C1C1C;
+    color: #1c1c1c;
     position: relative;
     width: 98px;
     display: flex;
@@ -3247,11 +3247,11 @@ details-disclosure > details {
 }
 
 .color-accent-2 {
-    background: #D55F4A;
+    background: #d55f4a;
 }
 
 .color-inverse {
-    background: #1F4692;
+    background: #1f4692;
 }
 
 .gradient {
@@ -3624,15 +3624,6 @@ details-disclosure > details {
     .scroll-trigger:not(.scroll-trigger--offscreen).animate--slide-in {
         animation: var(--animation-slide-in);
         animation-delay: calc(var(--animation-order) * 75ms);
-    }
-
-    .scroll-trigger.scroll-trigger--design-mode.animate--fade-in,
-    .scroll-trigger.scroll-trigger--design-mode.animate--slide-in,
-    .scroll-trigger.scroll-trigger--design-mode .slider,
-    .scroll-trigger:not(.scroll-trigger--offscreen).scroll-trigger--cancel {
-        opacity: 1;
-        animation: none;
-        transition: none;
     }
 
     .scroll-trigger.scroll-trigger--design-mode.animate--slide-in {

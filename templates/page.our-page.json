@@ -46,8 +46,8 @@
         "section_background_color": "#fffcfa",
         "full_width": true,
         "max_width": 120,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "a17668da-e57e-46d7-b91e-501d97140111": {
