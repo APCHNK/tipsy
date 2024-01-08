@@ -598,6 +598,7 @@
 }
 
 .card__content form.form .button {
+
     display: flex;
     min-height: 22px;
     max-height: 41px;

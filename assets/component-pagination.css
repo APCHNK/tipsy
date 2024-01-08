@@ -75,6 +75,7 @@
 }
 
 .pagination__item-number:hover {
+
     border-radius: 38px;
     border: 1px solid var(--accent-red-100, #d55f4a);
     background: var(--white, #fffcfa);
@@ -95,6 +96,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 24px; /* 150% */
+
 }
 
 .pagination__item--current {
