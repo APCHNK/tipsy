@@ -204,6 +204,7 @@
     border: 3px solid var(--accent-blue-100, #1f4692);
     background: var(--white, #fffcfa);
     padding: 13px 35px;
+    white-space: nowrap;
 }
 .t1 {
     transform: rotate(13.319deg);

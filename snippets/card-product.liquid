@@ -215,7 +215,7 @@
                 id="{{ product_form_id }}-submit"
                 type="submit"
                 name="add"
-                class="quick-add__submit button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
+                class="button__1 quick-add__submit button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
                 aria-haspopup="dialog"
                 aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                 aria-live="polite"
@@ -239,10 +239,47 @@
                 {%- render 'loading-spinner' -%}
               </button>
 
-              <button type="submit" class="quick-add__submit button button--primary">
+
+              <input
+                type="hidden"
+                name="return_to"
+                value="/checkout">
+              <button
+                type="submit"
+                {% if card_product.selected_or_first_available_variant.available == false %}
+                disabled
+                {% endif %}
+                class="button__2 quick-add__submit button button--primary">
                 fast checkout
               </button>
+
+
             {%- endform -%}
+            <script>
+                // Получаем все кнопки с классами button__1 и button__2
+                var buttons = document.querySelectorAll('.button__1, .button__2');
+
+                // Добавляем обработчик события к каждой кнопке
+                buttons.forEach(function(button) {
+                  button.addEventListener('click', function() {
+                    // Получаем родительскую форму
+                    var form = button.closest('form');
+
+                    // Получаем скрытое поле return_to внутри формы
+                    var returnToInput = form.querySelector('input[name="return_to"]');
+
+                    // Устанавливаем значение в зависимости от класса кнопки
+                    if (button.classList.contains('button__1')) {
+                      returnToInput.value = '';
+                    } else if (button.classList.contains('button__2')) {
+                      returnToInput.value = '/checkout';
+                    }
+
+                    // Отправляем форму
+                    form.submit();
+                  });
+                });
+            </script>
           </product-form>
         </div>
         {%- if show_quick_add -%}
