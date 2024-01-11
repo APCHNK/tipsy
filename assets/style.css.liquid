@@ -59,9 +59,10 @@
   height: 100%;
   {% comment %}border-radius: 40px;
   border: 3px solid var(--accent-blue-100, #1f4692);
-  background: var(--white, #fffcfa);{% endcomment %}
-  padding: 40px;
-  z-index: 4;
+  background: var(--white, #fffcfa);
+{% endcomment %}
+padding: 40px;
+z-index: 4;
 }
 
 .cart:before {
@@ -274,7 +275,7 @@
 .cart_sumary .continue div {
   cursor: pointer;
   padding: 7px 33px;
-  color: var(--accent-blue-100, #1f4692);
+  color: var(--accent-blue-100, #FFF6EE);
   font-family: Birdie;
   font-size: 16px;
   font-style: normal;
@@ -282,8 +283,8 @@
   line-height: 24px;
   /* 150% */
   border-radius: 100px;
-  border: 1px solid var(--accent-blue-100, #1f4692);
-  background: var(--accent-yellow-100, #f4be18);
+  border: 1px solid var(--black, #1C1C1C);
+  background: var(--accent-blue-100, #1F4692);
   width: max-content;
   transition: all 0.3s;
 }
@@ -291,7 +292,7 @@
   position: absolute;
   content: "";
   border-radius: 46px;
-  background: var(--accent-blue-100, #1f4692);
+  background: var(--accent-blue-100, #1C1C1C);
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -492,7 +493,8 @@
     margin-top: 3px;
   }
 
-  .cart_sumary .continue, .cart_sumary .continue div {
+  .cart_sumary .continue,
+  .cart_sumary .continue div {
     width: 100%;
     text-align: center;
   }
@@ -578,4 +580,7 @@
   .summary_block .title {
     text-align: unset;
   }
+}
+.right_elements .delete svg path {
+  fill: red;
 }

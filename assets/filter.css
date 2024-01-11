@@ -30,7 +30,6 @@
     top: 7px;*/
 }
 
-
 .custom-select .select-items {
     position: absolute;
     background: var(--white, #fffcfa);
@@ -277,4 +276,13 @@ form .field::before {
 }
 .facets-vertical-sort {
     padding-bottom: unset !important;
+}
+.delete_filter {
+    background: white;
+    position: sticky;
+    top: 199px;
+    margin-bottom: 193px;
+}
+.facets-wrapper {
+    position: relative;
 }

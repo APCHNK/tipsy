@@ -1,94 +1,93 @@
 {{ 'section-custom-product.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-    .custom-product-section {
-    padding-top:19px;
+  .custom-product-section {
+    padding-top: 19px;
     padding-top: {{ section.settings.padding_top | times: 0.22 | round: 0 }}px;
-        padding-bottom: {{ section.settings.padding_bottom | times: 0.15 | round: 0 }}px;
-    }
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.15 | round: 0 }}px;
+  }
 
-    @media screen and (min-width: 750px) {
-        .custom-product-section {
-            padding-top: {{ section.settings.padding_top }}px;
-            padding-bottom: {{ section.settings.padding_bottom }}px;
-        }
+  @media screen and (min-width: 750px) {
+    .custom-product-section {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+  }
 {%- endstyle -%}
 
 
 <div class="custom-product-section">
-    <div class="page-width">
-        <h2 class="custom-product-title">Reserve your Court, Grab your Homies,<br/> and Get Tipsy</h2>
-        <div class="custom-product-wrap">
-            <div class="custom-product-item">
-                <div class="custom-product-item-wrapper">
-                    <div class="item-title">Pickleball Court Pricing</div>
-                    <div class="item-text">Show Up and Play. If you show up and there is an empty court that is not reserved, it’s only $5/ hour to play no matter what day or time it is!</div>
-                    <div class="item-wrap">
-                        <div class="item-header">Monday - Friday</div>
-                        <div class="item-price">$20/h</div>
-                        <div class="item-time">7:00 am - 5:00 pm</div>
-                    </div>
-                    <div class="item-wrap">
-                        <div class="item-header">Saturday - Sunday</div>
-                        <div class="item-price">$40/h</div>
-                        <div class="item-time">all day</div>
-                    </div>
-                    <a href="#" class="button button--primary">Reserve</a>
-                </div>
-            </div>
-            <div class="custom-product-item">
-                <div class="custom-product-item-wrapper">
-                    <div class="item-title">Golf Simulator Pricing</div>
-                    <div class="item-text">ping Pong, Pool, cornhole, shuffleboard are all free for guests</div>
-                    <div class="item-wrap">
-                        <div class="item-header">Monday - Friday</div>
-                        <div class="item-price">$30/h</div>
-                        <div class="item-time">7:00 am - 5:00 pm</div>
-                    </div>
-                    <div class="item-wrap">
-                        <div class="item-header">Saturday - Sunday</div>
-                        <div class="item-price">$60/h</div>
-                        <div class="item-time">all day</div>
-                    </div>
-                    <a href="#" class="button button--primary">Reserve</a>
-                </div>
-            </div>
+  <div class="page-width">
+    <h2 class="custom-product-title">Reserve your Court, Grab your Homies,<br/> and Get Tipsy</h2>
+    <div class="custom-product-wrap">
+      <div class="custom-product-item">
+        <div class="custom-product-item-wrapper">
+          <div class="item-title">Pickleball Court Pricing</div>
+          <div class="item-text">Show Up and Play. If you show up and there is an empty court that is not reserved, it’s only $5/ hour to play no matter what day or time it is!</div>
+          <div class="item-wrap">
+            <div class="item-header">Monday - Friday</div>
+            <div class="item-price">$20/h</div>
+            <div class="item-time">7:00 am - 5:00 pm</div>
+          </div>
+          <div class="item-wrap">
+            <div class="item-header">Saturday - Sunday</div>
+            <div class="item-price">$40/h</div>
+            <div class="item-time">all day</div>
+          </div>
+          <a href="#" class="button button--primary">Reserve</a>
         </div>
+      </div>
+      <div class="custom-product-item">
+        <div class="custom-product-item-wrapper">
+          <div class="item-title">Golf Simulator Pricing</div>
+          <div class="item-text">ping Pong, Pool, cornhole, shuffleboard <br>are all free for guests</div>
+          <div class="item-wrap">
+            <div class="item-header">Monday - Friday</div>
+            <div class="item-price">$30/h</div>
+            <div class="item-time">7:00 am - 5:00 pm</div>
+          </div>
+          <div class="item-wrap">
+            <div class="item-header">Saturday - Sunday</div>
+            <div class="item-price">$60/h</div>
+            <div class="item-time">all day</div>
+          </div>
+          <a href="#" class="button button--primary">Reserve</a>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 {% schema %}
-{
+  {
     "name": "Section custom product",
     "settings": [
-        {
-            "type": "range",
-            "id": "padding_top",
-            "min": 0,
-            "max": 100,
-            "step": 2,
-            "unit": "px",
-            "label": "t:sections.all.padding.padding_top",
-            "default": 20
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "min": 0,
-            "max": 200,
-            "step": 2,
-            "unit": "px",
-            "label": "t:sections.all.padding.padding_bottom",
-            "default": 20
-        }
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 20
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 20
+      }
     ],
     "presets": [
-        {
-            "name": "Section custom product"
-        }
+      {
+        "name": "Section custom product"
+      }
     ]
-}
+  }
 {% endschema %}
 
 {% stylesheet %}
