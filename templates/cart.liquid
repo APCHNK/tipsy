@@ -89,11 +89,11 @@
             </li>
             <li>
               <div class="text">Taxes</div>
-              <div class="ptice">$15</div>
+              <div class="ptice">Free</div>
             </li>
             <li>
               <div class="text">total amount</div>
-              <div class="ptice">$165</div>
+              <div class="ptice">{{ cart.total_price | money_without_trailing_zeros }}</div>
             </li>
           </ul>
           <div class="continue">
@@ -119,11 +119,11 @@
         </li>
         <li>
           <div class="text">Taxes</div>
-          <div class="ptice">$15</div>
+          <div class="ptice">Free</div>
         </li>
         <li>
           <div class="text">total amount</div>
-          <div class="ptice">$165</div>
+          <div class="ptice">{{ cart.total_price | money_without_trailing_zeros }}</div>
         </li>
       </ul>
       <div class="save">
